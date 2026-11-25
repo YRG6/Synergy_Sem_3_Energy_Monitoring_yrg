@@ -19,7 +19,8 @@ public class SecurityConfig {
 
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
 
-    public SecurityConfig(JwtAuthenticationFilter jwtAuthenticationFilter) {
+    public SecurityConfig(
+            JwtAuthenticationFilter jwtAuthenticationFilter) {
         this.jwtAuthenticationFilter = jwtAuthenticationFilter;
     }
 
@@ -30,10 +31,13 @@ public class SecurityConfig {
         http
             .csrf(csrf -> csrf.disable())
 
-            .cors(cors -> cors.configurationSource(corsConfigurationSource()))
+            .cors(cors -> cors.configurationSource(
+                corsConfigurationSource()
+            ))
 
             .sessionManagement(session -> session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            )
 
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
@@ -59,7 +63,8 @@ public class SecurityConfig {
             "http://localhost:5173",
             "http://127.0.0.1:5173",
             "http://localhost:5175",
-            "http://127.0.0.1:5175"
+            "http://127.0.0.1:5175",
+            "https://synergy-sem-3-energy-monitoring-24cpj4iw9-yrg-6.vercel.app"
         ));
 
         configuration.setAllowedMethods(List.of(
