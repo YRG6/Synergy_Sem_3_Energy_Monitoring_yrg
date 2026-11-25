@@ -64,7 +64,8 @@ public class SecurityConfig {
             "http://127.0.0.1:5173",
             "http://localhost:5175",
             "http://127.0.0.1:5175",
-            "https://synergy-sem-3-energy-monitoring-24cpj4iw9-yrg-6.vercel.app"
+            "https://synergy-sem-3-energy-monitoring-24cpj4iw9-yrg-6.vercel.app",
+            "https://synergy-sem-3-energy-monitoring-yrg.vercel.app"
         ));
 
         configuration.setAllowedMethods(List.of(
